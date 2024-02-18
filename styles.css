@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    z-index: 0;
+    background-color: bisque;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.game-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgb(0, 0, 0);
+    height: 500px;
+    width: 700px;
+    background-color: #90DBFA;
+    z-index: -1;
+}
+
+.game-frame .sky {
+    position:absolute;
+    left: 620px;
+    z-index: -1;;
+}
+
+.game-frame .sky img {
+    width: 80px;
+}
+
+.game-frame .tree {
+    position: absolute;
+    top: 121px;
+    left: 550px;
+    z-index: -2;
+}
+
+.tree img {
+    width: 150px;
+    height: 150px;
+}
+
+.game-frame .player {
+    position: relative;
+    top: 215px;
+    left:150px;
+    z-index: 2;
+}
+
+.game-frame .player img {
+  width: 50px;
+}
+
+.game-frame .obstacles {
+    position: absolute;
+    top: 181px;
+    left: 650px;
+   
+}
+
+.game-frame .obstacles img {
+  width: 50px;
+}
+
+.game-frame .ground {
+    position: absolute;
+    top: 121px;
+}
+
+.game-frame .bottom {
+    position: relative;
+    top: 215px;
+}
+
+.game-frame .middle {
+    position: relative;
+    top: 250px;
+    margin-left: 20px;
+}
+
+.game-frame .bottom .grass {
+    width: 700px;
+    position:absolute;
+    left: 640px;
+    top: 248px;
+    z-index: -1;
+}
+
+.game-frame .ground {
+    position: absolute;
+    top: 474px
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+a img {
+    width: 50px;
+    margin: 25px;
+}
+
+a img:hover {
+    transform: scale(1.2);
+}
+
+.buttons a {
+    display: none;
+    text-decoration: none;
+    font-weight: 900;
+    
+}
+
+a p {
+    display: none;
+}
+
+.buttons a.active {
+    display: inline-block;
+}
+
+a p.show {
+    display:grid;
+}
+
+
