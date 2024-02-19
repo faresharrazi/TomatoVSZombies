@@ -192,6 +192,8 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+document.addEventListener('click', jump);
+
 
 // BUTTONS ACTIONS 
 
