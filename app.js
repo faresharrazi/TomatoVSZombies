@@ -327,13 +327,17 @@ restartButton.addEventListener('click', function(event) {
 function isColliding(element1, element2) {
     const rect1 = element1.getBoundingClientRect();
     const rect2 = element2.getBoundingClientRect();
+    console.log(`rect1.bottom: ${rect1.bottom}`);
+    console.log(`rect2.top: ${rect2.top}`);
+    console.log(`rect1.right: ${rect1.right}`);
+    console.log(`rect2.left: ${rect2.left}`);
+    
 
-    return !(
-        rect1.right < rect2.left || 
-        rect1.left > rect2.right || 
-        rect1.bottom < rect2.top || 
-        rect1.top > rect2.bottom
-    );
+    return (
+        rect1.right > (rect2.left)  &&
+        rect1.left < (rect2.right)  &&
+        rect1.bottom > (rect2.top)  
+        );
 }
 
 // Function to check collision and handle game over
@@ -371,4 +375,4 @@ function gameOver() {
 }
 
 // Call checkCollisionAndGameOver periodically to check for collisions
-let collisionInterval = setInterval(checkCollisionAndGameOver, 500); // Adjust the interval as needed
+let collisionInterval = setInterval(checkCollisionAndGameOver, 400); // Adjust the interval as needed

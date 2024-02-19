@@ -129,7 +129,7 @@ a img:hover {
 
 .gameover {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2;
@@ -138,8 +138,8 @@ a img:hover {
 
 .cover {
     position: absolute;
-    top: -10%;
-    left: 7%;
+    top: 10%;
+    left: 12%;
     transform: translate(-50%, -50%);
     transform: scale(0.5);
 }
