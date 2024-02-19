@@ -109,31 +109,31 @@ h1 {
 }
 
 a img {
-    width: 50px;
+    width: 25px;
     margin: 25px;
+    margin: 10px;
 }
 
 a img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .buttons a {
     display: none;
     text-decoration: none;
-    font-weight: 900;
-    
-}
-
-a p {
-    display: none;
 }
 
 .buttons a.active {
     display: inline-block;
 }
 
-a p.show {
-    display:grid;
+.gameover {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    display: none;
 }
 
 
