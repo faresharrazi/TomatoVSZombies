@@ -90,7 +90,7 @@ h1 {
 .game-frame .bottom .grass {
     width: 700px;
     position:absolute;
-    left: 640px;
+    left: 550px;
     top: 248px;
     z-index: -1;
 }
@@ -134,6 +134,14 @@ a img:hover {
     transform: translate(-50%, -50%);
     z-index: -2;
     display: none;
+}
+
+.cover {
+    position: absolute;
+    top: -10%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    transform: scale(0.5);
 }
 
 

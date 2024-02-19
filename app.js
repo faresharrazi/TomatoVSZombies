@@ -160,7 +160,7 @@ let isJumping = false;
 
 // Function to handle player jump
 function jump() {
-    if (!isJumping) {
+    if (!isJumping && gameStatus==='on') {
         document.getElementById('jumpSound').play();
         isJumping = true;
         let jumpInterval = setInterval(function() {
@@ -266,7 +266,7 @@ function resetScore() {
 let moveCharInterveal, moveZombieInterval, createZombieInterval, moveTreeInterval, moveGrassInterval, moveSkyInterval;
 
 function startGame() {
-    gameStatus = 'on';
+    document.querySelector('.cover').style.display = 'none';
     startScore();
     document.getElementById('gameOnSound').play();
     document.getElementById('gameIntroSound').pause();
@@ -276,6 +276,9 @@ function startGame() {
     moveTreeInterval = setInterval(moveTree, 25);
     moveGrassInterval = setInterval(moveGrass, 10);
     moveSkyInterval = setInterval(moveSky, 50);
+    setTimeout(function() {
+        gameStatus = 'on';
+    }, 50);
 }
 
 // Function to pause the game
@@ -365,9 +368,6 @@ function gameOver() {
     clearInterval(createZombieInterval);
     clearInterval(moveCharInterveal);
     clearInterval(collisionInterval);
-    
-
-    document.getElementById('gameIntroSound').play();
 }
 
 // Call checkCollisionAndGameOver periodically to check for collisions
