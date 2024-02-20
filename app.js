@@ -144,8 +144,8 @@ function getRandomTimeInterval(min, max) {
 // JUMPING CODE
 
 // Constants for jump strength and gravity
-const JUMP_STRENGTH = 18;
-const GRAVITY = 18;
+let jumpVelocity = 20;
+const GRAVITY = 0.5;
 
 
 // Variables to track player's vertical position and velocity
@@ -161,17 +161,23 @@ let isJumping = false;
 // Function to handle player jump
 function jump() {
     if (!isJumping && gameStatus==='on') {
+
         document.getElementById('jumpSound').play();
         isJumping = true;
+        jumpVelocity = 20;
+
         let jumpInterval = setInterval(function() {
         if (CURRENT_POSITION >= 65) {
-            CURRENT_POSITION -= JUMP_STRENGTH;
+            CURRENT_POSITION -= jumpVelocity;
+            jumpVelocity -= GRAVITY;
             tomato.style.top = CURRENT_POSITION + 'px';
         } else {
             clearInterval(jumpInterval);
+            jumpVelocity = 20;
             let fallInterval = setInterval(function() {
-                if (CURRENT_POSITION < 215) {
-                    CURRENT_POSITION += GRAVITY;
+                if (CURRENT_POSITION < INIT_POSITION) {
+                    CURRENT_POSITION += jumpVelocity;
+                    jumpVelocity += GRAVITY;
                     tomato.style.top = CURRENT_POSITION + 'px';
             } else {
             clearInterval(fallInterval);
@@ -180,9 +186,6 @@ function jump() {
         },50);
         } 
     }, 50); 
-    
-     // Play the jump sound
-
     }
 }
 
