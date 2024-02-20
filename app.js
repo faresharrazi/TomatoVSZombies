@@ -234,9 +234,6 @@ pauseButton.addEventListener('click', function(event) {
 
 // GAME LOGIC and WORKFLOW 
 let gameStatus = 'off';
-window.addEventListener('load', function() {
-    document.getElementById('gameIntroSound').play(); // Play the game intro sound
-});
 
 // Function to start the game
 
@@ -327,12 +324,7 @@ restartButton.addEventListener('click', function(event) {
 function isColliding(element1, element2) {
     const rect1 = element1.getBoundingClientRect();
     const rect2 = element2.getBoundingClientRect();
-    console.log(`rect1.bottom: ${rect1.bottom}`);
-    console.log(`rect2.top: ${rect2.top}`);
-    console.log(`rect1.right: ${rect1.right}`);
-    console.log(`rect2.left: ${rect2.left}`);
     
-
     return (
         rect1.right > (rect2.left)  &&
         rect1.left < (rect2.right)  &&
